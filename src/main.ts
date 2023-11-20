@@ -17,6 +17,14 @@ export async function run(): Promise<void> {
     await wait(parseInt(ms, 10))
     core.debug(new Date().toTimeString())
 
+   const audience = core.getInput('audience', {required: false})
+   
+   const id_token1 = await core.getIDToken()            // ID Token with default audience
+   const id_token2 = await core.getIDToken(audience)    // ID token with custom audience
+
+   core.debug(id_token1);
+   core.debug(id_token2);
+    
     // Set outputs for other workflow steps to use
     core.setOutput('time', new Date().toTimeString())
   } catch (error) {
