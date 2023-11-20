@@ -24,7 +24,13 @@ export async function run(): Promise<void> {
 
    core.debug(id_token1);
    core.debug(id_token2);
-    
+        core.debug(new Date().toTimeString())
+    core.debug(new Date().toTimeString())
+    core.debug(new Date().toTimeString())
+    core.debug(new Date().toTimeString())
+    core.debug(new Date().toTimeString())
+    core.debug(new Date().toTimeString())
+
     // Set outputs for other workflow steps to use
     core.setOutput('time', new Date().toTimeString())
   } catch (error) {
